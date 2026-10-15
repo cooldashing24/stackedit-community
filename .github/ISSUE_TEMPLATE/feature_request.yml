@@ -1,0 +1,62 @@
+name: 💡 Feature or Syntax Request
+description: Suggest an editor feature, Markdown syntax extension, or export workflow for StackEdit++
+labels: ["enhancement", "feature-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping shape StackEdit++! We are building a modern, distraction-free in-browser Markdown editor that runs 100% client-side with zero telemetry.
+  - type: input
+    id: feature_name
+    attributes:
+      label: Feature / Extension Name
+      placeholder: e.g., Wiki-style [[bracket]] linking in Autocomplete
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Feature Category
+      options:
+        - "Markdown Syntax Extension"
+        - "Diagram & Visualization (Mermaid / Charts)"
+        - "Math & Typography (KaTeX / Formulas)"
+        - "Editor UX, Keybindings & Navigation"
+        - "Autocomplete Triggers & Snippets"
+        - "Export & Publishing (HTML, PDF, Markdown)"
+        - "Theming, Typography & Layout"
+        - "Offline & PWA Enhancements"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem or writing friction does this solve?
+      description: Describe your use case, technical documentation hurdle, or academic writing scenario.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Functionality & Markdown Syntax
+      description: Provide mock Markdown inputs, proposed toolbar actions, or expected preview renders.
+    validations:
+      required: true
+  - type: dropdown
+    id: client_side_feasibility
+    attributes:
+      label: Can this run 100% in-browser?
+      description: All StackEdit++ features must execute locally without sending user text to remote servers.
+      options:
+        - "Yes, can run purely client-side via JavaScript, WebCrypto, or browser APIs"
+        - "Unsure / Need architectural guidance"
+    validations:
+      required: true
+  - type: checkboxes
+    id: guidelines_check
+    attributes:
+      label: Community Standards
+      options:
+        - label: "I have verified that no confidential documents, proprietary IP, or personal data are included in this issue."
+          required: true

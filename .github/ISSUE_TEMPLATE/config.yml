@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📝 Live StackEdit++ Editor
+    url: https://stackeditplusplus.meshworld.in/app
+    about: Access the full in-browser Markdown editor with KaTeX, Mermaid diagrams, and offline PWA storage.
+  - name: 🌐 StackEdit++ Product Homepage
+    url: https://stackeditplusplus.meshworld.in
+    about: Explore Papercraft-based feature overviews, typography specifications, and documentation.
+  - name: 💬 User Feedback & Suggestions
+    url: https://github.com/cooldashing24/stackedit-community/issues/new?template=feedback.yml
+    about: Share quick feedback, workflow impressions, or feature enhancements.
+  - name: 🛡️ Security Vulnerability Reporting
+    url: https://github.com/cooldashing24/stackedit-community/security/advisories/new
+    about: Please report security vulnerabilities privately via GitHub Security Advisories rather than opening public issues.

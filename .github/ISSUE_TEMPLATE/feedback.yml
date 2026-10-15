@@ -1,0 +1,45 @@
+name: 💬 Community Feedback & Discussion
+description: Share general feedback, suggestions, or impressions about StackEdit++
+labels: ["feedback", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We would love to hear from you! Whether you use StackEdit++ for technical documentation, academic papers, architecture diagrams, or daily notes, your experience helps us build a faster and more delightful editor.
+  - type: dropdown
+    id: feedback_type
+    attributes:
+      label: Feedback Category
+      options:
+        - "User Experience & Usability"
+        - "Performance & Editor Speed"
+        - "Typography & Visual Design"
+        - "KaTeX Math or Mermaid Diagramming Experience"
+        - "Offline / PWA Workflow"
+        - "General Appreciation or Suggestions"
+    validations:
+      required: true
+  - type: textarea
+    id: feedback_content
+    attributes:
+      label: Your Feedback or Suggestion
+      description: What do you love about StackEdit++? What could be improved or simplified?
+      placeholder: |
+        I really enjoy the live split-pane rendering, especially the fast KaTeX updates!
+        One thing that would make my workflow smoother is...
+    validations:
+      required: true
+  - type: input
+    id: role_or_usecase
+    attributes:
+      label: Primary Use Case (Optional)
+      placeholder: e.g., Software Architect, University Student, Technical Writer, Security Researcher
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy_verification
+    attributes:
+      label: Privacy Check
+      options:
+        - label: "I confirm that this feedback does not contain confidential or proprietary information."
+          required: true

@@ -1,0 +1,35 @@
+name: Route & Link Integrity Audit
+
+on:
+  schedule:
+    # Run every morning at 04:00 UTC (09:30 AM IST)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'docs/**'
+
+jobs:
+  audit-links:
+    name: Verify StackEdit++ Links & Route Integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run Markdown Link Integrity Crawler
+        run: |
+          npx --yes lychee --verbose \
+            --user-agent "StackEditCommunityLinkAuditBot/1.0 (+https://stackeditplusplus.meshworld.in)" \
+            --accept "200,206,301,302,307,308" \
+            --timeout 15 \
+            --max-retries 3 \
+            --exclude-mail \
+            --exclude "https://github.com/cooldashing24/stackedit-community/.*" \
+            README.md docs/**/*.md

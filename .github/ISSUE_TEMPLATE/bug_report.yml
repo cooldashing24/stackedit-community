@@ -1,0 +1,87 @@
+name: 🐛 Bug Report
+description: Report an issue, rendering error, or editor regression in StackEdit++
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue! Because StackEdit++ runs 100% client-side in browser RAM, environment details (browser engine, operating system, and DevTools console) are vital for diagnosing rendering and parser behaviors.
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component
+      description: Select the primary subsystem experiencing the issue.
+      options:
+        - "Markdown Live Preview"
+        - "Code Editor / Caret Navigation"
+        - "KaTeX Math Rendering"
+        - "Mermaid Diagram Rendering"
+        - "ABCjs Music Notation"
+        - "Autocomplete / Emoji Picker"
+        - "Table of Contents (TOC)"
+        - "Settings / YAML Configuration"
+        - "Export (HTML, PDF, Markdown)"
+        - "Offline Mode / PWA Caching"
+        - "Other"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser & Operating System
+      placeholder: e.g., Chrome 130 on macOS Sequoia 15.1 / Firefox 132 on Ubuntu 24.04
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual Behavior
+      description: What happened instead? Include exact error messages or visual anomalies.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: Steps to Reproduce
+      description: |
+        1. Open https://stackeditplusplus.meshworld.in/app
+        2. Enter the sample markdown
+        3. Observe...
+      placeholder: |
+        1. Navigate to https://stackeditplusplus.meshworld.in/app
+        2. Paste the snippet provided below
+        3. Switch to Split View and observe KaTeX rendering error
+    validations:
+      required: true
+  - type: textarea
+    id: sample_markdown
+    attributes:
+      label: Sanitized Markdown Reproduction Snippet
+      description: Please provide a minimal Markdown snippet. WARNING: DO NOT paste confidential proprietary documents, private research, or PII.
+      placeholder: |
+        ```math
+        \int_{0}^{\infty} e^{-x^2} dx
+        ```
+    validations:
+      required: true
+  - type: textarea
+    id: console_logs
+    attributes:
+      label: Browser Console Logs
+      description: Relevant output from DevTools Console (F12).
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy_verification
+    attributes:
+      label: Privacy & Data Protection Verification
+      options:
+        - label: "I confirm that no confidential notes, proprietary formulas, or personal identifying information are included in this report."
+          required: true
